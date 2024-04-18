@@ -36,9 +36,9 @@ class MakeApiCall:
         self.get_data(api)
     
     def submit_values(self, feels_like, temp, humidity):
-        statsd.gauge('outside.feels_like', feels_like, tags=["source:weatherscript.py"])
-        statsd.gauge('outside.temp', temp, tags=["source:weatherscript.py"])
-        statsd.gauge('outside.humidity', humidity, tags=["source:weatherscript.py"])
+        statsd.gauge('outside.feels_like', feels_like, tags=["source:script.py"])
+        statsd.gauge('outside.temp', temp, tags=["source:script.py"])
+        statsd.gauge('outside.humidity', humidity, tags=["source:script.py"])
 
 if __name__ == "__main__":
     api_call = MakeApiCall("https://api.openweathermap.org/data/2.5/weather?q=Denver&appid=bdfe3f66d9c0485a948f488338e7747e&units=imperial")
